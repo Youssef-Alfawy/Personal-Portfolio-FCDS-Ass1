@@ -1007,7 +1007,11 @@ ul.timeline-list {
 }
 
 /* Contact Form */
-
+.muted {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 24px;
+}
 .contact-form fieldset {
   margin: 0 0 24px;
   padding: 24px;
@@ -1355,6 +1359,9 @@ ul.timeline-list {
 /* Responsive */
 /* Tablet */
 @media (max-width: 1024px) {
+  body {
+    background-attachment: scroll;
+  }
   body main {
     max-width: 90%;
   }
@@ -1385,7 +1392,34 @@ ul.timeline-list {
     padding: 24px;
   }
 
-  /* Contact Form */
+  section#card p#contact-info {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    row-gap: 10px;
+    font-size: 12px;
+  }
+
+  section#card p#contact-info a {
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  section#card p#contact-info > i[class*="fa-envelope"] {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  section#card p#contact-info > a[href^="mailto:"] {
+    grid-row: 2;
+    grid-column: 2 / 4;
+    justify-content: flex-start;
+  }
+
   .contact-form fieldset {
     padding: 20px;
   }
@@ -1403,7 +1437,6 @@ ul.timeline-list {
     gap: 12px;
   }
 
-  /* Timeline */
   .timeline-item {
     grid-template-columns: 1fr;
     padding-left: 46px;
@@ -1437,7 +1470,6 @@ ul.timeline-list {
   }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
   header.site-header {
     width: 92%;
@@ -1465,7 +1497,41 @@ ul.timeline-list {
     height: 110px;
   }
 
-  section#card h3#name {
+  section#card p#contact-info {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    row-gap: 10px;
+    font-size: 11px;
+  }
+
+  section#card p#contact-info i {
+    font-size: 11px;
+  }
+
+  section#card p#contact-info a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    white-space: nowrap;
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  section#card p#contact-info > i[class*="fa-envelope"] {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  section#card p#contact-info > a[href^="mailto:"] {
+    grid-row: 2;
+    grid-column: 2 / 4;
+  }
+
+  section#card h2#name {
     font-size: 20px;
   }
 
@@ -1474,7 +1540,6 @@ ul.timeline-list {
     line-height: 1.5;
   }
 
-  /* Projects */
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -1483,7 +1548,6 @@ ul.timeline-list {
     padding: 18px;
   }
 
-  /* Timeline */
   .timeline-item {
     padding-left: 42px;
   }
@@ -1496,7 +1560,6 @@ ul.timeline-list {
     font-size: 16px;
   }
 
-  /* Career Objective */
   .objective-card {
     flex-direction: column;
     gap: 14px;
@@ -1507,11 +1570,13 @@ ul.timeline-list {
     font-size: 18px;
   }
 
-  /* Contact Form */
   .contact-form fieldset {
     padding: 16px;
   }
-
+  .muted {
+    color: var(--muted);
+    font-size: 14px;
+  }
   .contact-form .form-description {
     font-size: 13px;
   }
@@ -1531,7 +1596,6 @@ ul.timeline-list {
     width: 100%;
   }
 
-  /* Footer */
   .footer-links {
     gap: 16px;
   }
